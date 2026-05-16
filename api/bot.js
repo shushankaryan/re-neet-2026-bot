@@ -132,18 +132,20 @@ function getTimeRemaining() {
 }
 
 function buildCountdown(t) {
-    if (!t) return `✨ *Nazar aur Sabar* ✨\n\n_Made with ♡ by Shush_`;
+    if (!t) return `✨ <b>Nazar aur Sabar</b> ✨\n\n<i>Made with ♡ by Shush</i>`;
+    const randomQuote = MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)];
     return (
-        `✨ *RE-NEET 2026 COUNTDOWN* ✨\n` +
-        `━━━━━━━━━━━━━━━━━━━\n\n` +
-        `📅  *${String(t.days).padStart(3)}* Days\n` +
-        `🕐  *${String(t.hours).padStart(3)}* Hours\n` +
-        `⏱  *${String(t.minutes).padStart(3)}* Minutes\n` +
-        `⚡  *${String(t.seconds).padStart(3)}* Seconds\n\n` +
-        `━━━━━━━━━━━━━━━━━━━\n` +
-        `📆 Exam: *21 June 2026 (Sunday)*\n` +
-        `━━━━━━━━━━━━━━━━━━━\n\n` +
-        `_Made with ♡ by Shush_`
+        `✨ <b>RE-NEET 2026 COUNTDOWN</b> ✨\n` +
+        `━━━━━━━━━━━━━━\n\n` +
+        `📅  <b>${String(t.days).padStart(3)}</b> Days\n` +
+        `🕐  <b>${String(t.hours).padStart(3)}</b> Hours\n` +
+        `⏱  <b>${String(t.minutes).padStart(3)}</b> Minutes\n` +
+        `⚡  <b>${String(t.seconds).padStart(3)}</b> Seconds\n\n` +
+        `━━━━━━━━━━━━━━\n` +
+        `📆 Exam: <b>21 June 2026 (Sunday)</b>\n` +
+        `━━━━━━━━━━━━━━\n\n` +
+        `<blockquote><b><i>Quote:</i></b>\n<i>${randomQuote}</i></blockquote>\n\n` +
+        `<i>Made with ♡ by Shush</i>`
     );
 }
 
@@ -211,7 +213,7 @@ if (bot) {
         if (text === '⏳ Countdown' || text.startsWith('/countdown')) {
             await registerUser(chatId);
             bot.sendMessage(chatId, buildCountdown(t), {
-                parse_mode: 'Markdown',
+                parse_mode: 'HTML',
                 reply_markup: refreshKeyboard
             });
         }
@@ -235,14 +237,14 @@ if (bot) {
             try {
                 if (query.data === 'show_countdown') {
                     await bot.sendMessage(query.message.chat.id, buildCountdown(t), {
-                        parse_mode: 'Markdown',
+                        parse_mode: 'HTML',
                         reply_markup: refreshKeyboard
                     });
                 } else {
                     await bot.editMessageText(buildCountdown(t), {
                         chat_id: query.message.chat.id,
                         message_id: query.message.message_id,
-                        parse_mode: 'Markdown',
+                        parse_mode: 'HTML',
                         reply_markup: refreshKeyboard
                     });
                 }
