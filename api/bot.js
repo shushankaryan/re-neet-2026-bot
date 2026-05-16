@@ -136,14 +136,14 @@ function buildCountdown(t) {
     const randomQuote = MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)];
     return (
         `✨ <b>RE-NEET 2026 COUNTDOWN</b> ✨\n` +
-        `━━━━━━━━━━━━━━\n\n` +
+        `━━━━━━━━━━━━━━━━\n\n` +
         `📅  <b>${String(t.days).padStart(3)}</b> Days\n` +
         `🕐  <b>${String(t.hours).padStart(3)}</b> Hours\n` +
         `⏱  <b>${String(t.minutes).padStart(3)}</b> Minutes\n` +
         `⚡  <b>${String(t.seconds).padStart(3)}</b> Seconds\n\n` +
-        `━━━━━━━━━━━━━━\n` +
+        `━━━━━━━━━━━━━━━━\n` +
         `📆 Exam: <b>21 June 2026 (Sunday)</b>\n` +
-        `━━━━━━━━━━━━━━\n\n` +
+        `━━━━━━━━━━━━━━━━\n\n` +
         `<blockquote><b><i>Quote:</i></b>\n<i>${randomQuote}</i></blockquote>\n\n` +
         `<i>Made with ♡ by Shush</i>`
     );
@@ -169,12 +169,12 @@ const aboutKeyboard = {
 
 function buildAbout() {
     return `👨‍💻 *About / Creator*\n` +
-           `━━━━━━━━━━━━━━━━━━━\n\n` +
+           `━━━━━━━━━━━━━━━━\n\n` +
            `🤖 *Bot:* RE-NEET 2026 Countdown\n` +
            `📆 *Exam:* 21 June 2026 (Sunday)\n\n` +
            `👑 *Creator:* Shushank Aryan\n` +
            `📱 *Telegram:* @max9xm\n\n` +
-           `━━━━━━━━━━━━━━━━━━━\n` +
+           `━━━━━━━━━━━━━━━━\n` +
            `_Made with ♡ by Shush_`;
 }
 
