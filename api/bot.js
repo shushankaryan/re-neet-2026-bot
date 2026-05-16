@@ -273,10 +273,11 @@ async function fireDailyReminder() {
         msg = `<b>Tum Ghayal ho isiliye Ghatak ho.</b> Phod ke aana Re-NEET 2026. 🫡🤍\n\n<i>Made with ♡ by Shush</i>`;
     } else {
         const content = getDailyContent();
+        const formattedFilmy = content.filmy.replace(' ~', '\n\u2003\u2003\u2003\u2003\u2003\u2003~');
         msg = `🌅 <b>${content.greet}</b>\n\n` +
               `<b>${t.days} days LEFT.</b> ✨\n\n` +
               `<blockquote><b><i>Quote:</i></b>\n<i>${content.quote}</i></blockquote>\n\n` +
-              `<blockquote><b>Filmy Motivation:</b>\n${content.filmy}</blockquote>\n\n` +
+              `<blockquote><b>Thoda Filmy:</b>\n${formattedFilmy}</blockquote>\n\n` +
               `<i>Made with ♡ by Shush</i>`;
     }
 
