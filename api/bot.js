@@ -276,7 +276,7 @@ async function fireDailyReminder() {
         msg = `🌅 <b>${content.greet}</b>\n\n` +
               `<b>${t.days} days LEFT.</b> ✨\n\n` +
               `<blockquote><b><i>Quote:</i></b>\n<i>${content.quote}</i></blockquote>\n\n` +
-              `<blockquote><b><i>Filmy Motivation:</i></b>\n<i>${content.filmy}</i></blockquote>\n\n` +
+              `<blockquote><b>Filmy Motivation:</b>\n${content.filmy}</blockquote>\n\n` +
               `<i>Made with ♡ by Shush</i>`;
     }
 
