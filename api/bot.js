@@ -270,20 +270,20 @@ async function fireDailyReminder() {
 
     let msg = "";
     if (t.days === 0) {
-        msg = `*Tum Ghayal ho isiliye Ghatak ho.* Phod ke aana Re-NEET 2026. 🫡🤍\n\n_Made with ♡ by Shush_`;
+        msg = `<b>Tum Ghayal ho isiliye Ghatak ho.</b> Phod ke aana Re-NEET 2026. 🫡🤍\n\n<i>Made with ♡ by Shush</i>`;
     } else {
         const content = getDailyContent();
-        msg = `🌅 *${content.greet}*\n\n` +
-              `*${t.days} days LEFT.* ✨\n\n` +
-              `*_Quote:_*\n_${content.quote}_\n\n` +
-              `*_Filmy Motivation:_*\n_${content.filmy}_\n\n` +
-              `_Made with ♡ by Shush_`;
+        msg = `🌅 <b>${content.greet}</b>\n\n` +
+              `<b>${t.days} days LEFT.</b> ✨\n\n` +
+              `<blockquote><b><i>Quote:</i></b>\n<i>${content.quote}</i></blockquote>\n\n` +
+              `<blockquote><b><i>Filmy Motivation:</i></b>\n<i>${content.filmy}</i></blockquote>\n\n` +
+              `<i>Made with ♡ by Shush</i>`;
     }
 
     for (const userId of users) {
         try {
             await bot.sendMessage(userId, msg, { 
-                parse_mode: 'Markdown',
+                parse_mode: 'HTML',
                 reply_markup: mainKeyboard
             });
             await new Promise(r => setTimeout(r, 60)); // Rate limit
