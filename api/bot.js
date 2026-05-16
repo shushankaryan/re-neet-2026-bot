@@ -270,7 +270,12 @@ async function fireDailyReminder() {
 
     let msg = "";
     if (t.days === 0) {
-        msg = `<b>Tum Ghayal ho isiliye Ghatak ho.</b> Phod ke aana Re-NEET 2026. 🫡🤍\n\n<i>Made with ♡ by Shush</i>`;
+        msg = `Good Morning Ladies and Gentlemen.\n` +
+              `GET READY for NEET today!\n\n` +
+              `<b>Tum Ghayal ho isiliye Ghatak ho.</b> Phod ke aana Re-NEET 2026. 🫡🤍\n` +
+              `Best of Luck mere Sher, mere Cheeteh. 🤝🫂\n\n` +
+              `________________________________________________\n` +
+              `<i>Made with ♡ by Shush</i>`;
     } else {
         const content = getDailyContent();
         const formattedFilmy = content.filmy.replace(' ~', '\n— ');
