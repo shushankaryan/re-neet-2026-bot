@@ -19,6 +19,66 @@ try {
 
 const SUPER_ADMIN = 'max9xm';
 const RENEET_DATE = dayjs('2026-06-21T14:00:00+05:30');
+const START_DATE = dayjs('2026-05-16T00:00:00+05:30');
+
+const MOTIVATIONAL_QUOTES = [
+    "Uth ja. Padh le. Second chance waste mat kar. 🩺",
+    "Aaj ka din count karna hai ya waste? Tera choice. 📚",
+    "Jo log 5 baje uthke padhte hain, wahi AIIMS jaate hain. 🔥",
+    "Kal se nahi, ABHI se. Kitaab khol. 💪",
+    "Second chance milti hai sabko, use karte hain sirf winners. 🏆",
+    "Maa-Baap ki umeedon par paani pherna band kar. Uth aur padh! 😡",
+    "Tu tab tak nahi haarta jab tak tu koshish karna nahi chhodta. 💯",
+    "Doctor banne ka sapna dekha hai na? Toh neend ka tyaag toh karna padega. 🛌❌",
+    "Agar aaj aaraam karega, toh kal roega. Decide kar le. ⏳",
+    "Re-NEET ek mauka hai, dhokha mat dena apne aap ko. 🎯",
+    "Syllabus bada hai, lekin teri aukaat se bada nahi. 📖",
+    "Time pass karna band kar, tera competition abhi padh raha hai. 👁️",
+    "Bahaane banana chhod de, bahaane marks nahi laate. 🛑",
+    "Success ki koi lift nahi hoti, sidhiyaan chadhni padti hain. 🧗‍♂️",
+    "Jab tak todenge nahi, tab tak chhodenge nahi! 🔨",
+    "Tera aaj ka struggle tera kal ka stethoscope hai. 🩺✨",
+    "Log kya kahenge ye sochna chhod, tu kya banega ye soch. 🧠",
+    "Aadhi raat ko jaagne wala har baccha aashiq nahi hota, kuch doctor banne ki taiyari kar rahe hote hain. 🌙",
+    "Selection chahiye toh sacrifice toh karna padega. ⚡",
+    "Apne aalsi pan ko aag laga de, aur aage badh. 🔥",
+    "Aaj dard hoga, kal garv hoga. Uth ja! 🦁",
+    "Girte hain sheh-sawar hi maidan-e-jung mein, wo tifl kya gire jo ghutno ke bal chale. 🏇",
+    "Har roz ek choti jeet, badi kamyabi banati hai. 🏅",
+    "Tera competition kisi aur se nahi, tere pichle kal se hai. 🪞",
+    "Padhai mein lagan, aur dil mein aag. Yahi hai NEET clear karne ka raaz. 💥",
+    "Thak gaya hai? Toh aaraam kar le, lekin quit mat kar. 🛑",
+    "Peeche hatne ka option nahi hai, aage badhna majboori nahi, zaroorat hai. 🚀",
+    "Waqt fisal raha hai, aur tu abhi bhi soch raha hai. Khol NCERT. ⏳",
+    "Agar sapne sach karne hain, toh pehle sapne dekhna shuru kar... khuli aankhon se. 👁️",
+    "Tu utna hi bada ban sakta hai, jitni badi teri mehnat hogi. 🏔️",
+    "Kismat se zyada apni mehnat par bharosa rakh. 🍀❌ 땀✅",
+    "Har ek MCQ tera future decide kar raha hai. Dhyaan se kar. 📝",
+    "Jo aaj mushkil lag raha hai, kal wo aasan lagega, bas laga reh. 🧗",
+    "Apne lakshya ko mat bhool, baaki sab bhool ja. 🎯",
+    "Jitni gaaliyaan aaj sun raha hai, kal utni hi taaliyaan bajengi. 👏",
+    "Duniya ko apna result dikhana hai, toh aaj khud ko kitaabon mein chupa le. 📚",
+    "Koi tujh par vishwas kare ya na kare, tu khud par kar. 🤝",
+    "Rone se kuch nahi hoga, padhne se sab kuch hoga. 😭❌ 📖✅",
+    "Sirf padh mat, samajh aur yaad rakh. 🧠",
+    "NCERT teri Geeta hai, isko ghol ke pee ja. 📗",
+    "Agar selection nahi hua, toh yaad rakhna galti teri hi thi. Accept it and work hard now. 🫵",
+    "Zindagi mein ek baar jaan laga ke dekh, result zaroor aayega. 💯",
+    "Aalas tera sabse bada dushman hai, isse hara. ⚔️",
+    "Jab duniya so rahi ho, tab teri padhai chalni chahiye. 🦉",
+    "Focus wahan rakh jahan tu pohochna chahta hai, wahan nahi jahan tu hai. 🔭",
+    "Tere sapne teri aukaat se bade hone chahiye, aur teri mehnat tere sapnon se badi. 🌌",
+    "Haar man-na sabse aasaan kaam hai, lekin tu aasaan kaam karne ke liye nahi paida hua. 💪",
+    "Kuch banne ka junoon hai toh neend kaise aa sakti hai? ☕",
+    "Aaj ki mehnat, kal ka chain hai. 🕊️",
+    "Tu khud ka nirmaan kar raha hai, thoda waqt toh lagega. 🏗️"
+];
+
+function getDailyQuote() {
+    const diffDays = Math.max(0, dayjs().diff(START_DATE, 'day'));
+    const quoteIndex = diffDays % MOTIVATIONAL_QUOTES.length;
+    return MOTIVATIONAL_QUOTES[quoteIndex];
+}
 
 // ─── Database Helpers (Reusing existing 'users' table) ──────────────
 
@@ -61,7 +121,7 @@ function getTimeRemaining() {
 }
 
 function buildCountdown(t) {
-    if (!t) return "🎓 *RE-NEET 2026 is here!* Time to show them what a second chance looks like. 🩺";
+    if (!t) return "🎓 *RE-NEET 2026 is here!* Time to show them what a second chance looks like. 🩺\n\n_Made with ♡ by Shush_";
     return (
         `✨ *RE-NEET 2026 COUNTDOWN* ✨\n` +
         `━━━━━━━━━━━━━━━━━━━\n\n` +
@@ -71,7 +131,8 @@ function buildCountdown(t) {
         `⚡  *${String(t.seconds).padStart(3)}* Seconds\n\n` +
         `━━━━━━━━━━━━━━━━━━━\n` +
         `📆 Exam: *21 June 2026 (Sunday)*\n` +
-        `━━━━━━━━━━━━━━━━━━━`
+        `━━━━━━━━━━━━━━━━━━━\n\n` +
+        `_Made with ♡ by Shush_`
     );
 }
 
@@ -80,12 +141,29 @@ const refreshKeyboard = {
 };
 
 const mainKeyboard = {
-    keyboard: [
-        [{ text: '⏳ Countdown' }, { text: 'ℹ️ About' }]
-    ],
-    resize_keyboard: true,
-    persistent: true
+    inline_keyboard: [
+        [{ text: '⏳ Show Countdown', callback_data: 'show_countdown' }],
+        [{ text: 'ℹ️ About', callback_data: 'show_about' }]
+    ]
 };
+
+const aboutKeyboard = {
+    inline_keyboard: [
+        [{ text: '💬 Contact Owner', url: 'https://t.me/max9xm' }],
+        [{ text: '☕ Buy Me A Coffee', url: 'https://www.buymeacoffee.com/shushank' }]
+    ]
+};
+
+function buildAbout() {
+    return `👨‍💻 *About / Creator*\n` +
+           `━━━━━━━━━━━━━━━━━━━\n\n` +
+           `🤖 *Bot:* RE-NEET 2026 Countdown\n` +
+           `📆 *Exam:* 21 June 2026 (Sunday)\n\n` +
+           `👑 *Creator:* Shushank Aryan\n` +
+           `📱 *Telegram:* @max9xm\n\n` +
+           `━━━━━━━━━━━━━━━━━━━\n` +
+           `_Made with ♡ by Shush_`;
+}
 
 // ─── Handlers ───────────────────────────────────────────────────────
 
@@ -102,7 +180,7 @@ if (bot) {
             `🩺 *Welcome ${name}!*\n\n` +
             `RE-NEET 2026 mein sirf *${days} din* bache hain.\n\n` +
             `Roz subah 5 baje tujhe reminder milega ki kitne din bache hain.\n\n` +
-            `⏳ Countdown dekhne ke liye neeche button dabaa.`,
+            `_Made with ♡ by Shush_`,
             { parse_mode: 'Markdown', reply_markup: mainKeyboard }
         );
     });
@@ -119,42 +197,41 @@ if (bot) {
             });
         }
         else if (text === 'ℹ️ About' || text.startsWith('/about')) {
-            bot.sendMessage(chatId,
-                `👨‍💻 *About / Creator*\n` +
-                `━━━━━━━━━━━━━━━━━━━\n\n` +
-                `🤖 *Bot:* RE-NEET 2026 Countdown\n` +
-                `📆 *Exam:* 21 June 2026 (Sunday)\n\n` +
-                `👑 *Creator:* Shushank Aryan\n` +
-                `📱 *Telegram:* @max9xm\n\n` +
-                `━━━━━━━━━━━━━━━━━━━\n` +
-                `_Made with ♡ for RE-NEET Aspirants._`,
-                {
-                    parse_mode: 'Markdown',
-                    reply_markup: {
-                        inline_keyboard: [
-                            [{ text: '💬 Contact Owner', url: 'https://t.me/max9xm' }],
-                            [{ text: '☕ Buy Me A Coffee', url: 'https://www.buymeacoffee.com/shushank' }]
-                        ]
-                    }
-                }
-            );
+            bot.sendMessage(chatId, buildAbout(), {
+                parse_mode: 'Markdown',
+                reply_markup: aboutKeyboard
+            });
         }
     });
 
     bot.on('callback_query', async (query) => {
-        if (query.data === 'refresh_countdown') {
+        if (query.data === 'show_countdown' || query.data === 'refresh_countdown') {
             await registerUser(query.message.chat.id);
             try {
-                await bot.editMessageText(buildCountdown(getTimeRemaining()), {
-                    chat_id: query.message.chat.id,
-                    message_id: query.message.message_id,
-                    parse_mode: 'Markdown',
-                    reply_markup: refreshKeyboard
-                });
+                if (query.data === 'show_countdown') {
+                    await bot.sendMessage(query.message.chat.id, buildCountdown(getTimeRemaining()), {
+                        parse_mode: 'Markdown',
+                        reply_markup: refreshKeyboard
+                    });
+                } else {
+                    await bot.editMessageText(buildCountdown(getTimeRemaining()), {
+                        chat_id: query.message.chat.id,
+                        message_id: query.message.message_id,
+                        parse_mode: 'Markdown',
+                        reply_markup: refreshKeyboard
+                    });
+                }
                 await bot.answerCallbackQuery(query.id, { text: '⏳ Updated!' });
             } catch (err) {
                 await bot.answerCallbackQuery(query.id, { text: '⏳ Wait a sec...' });
             }
+        }
+        else if (query.data === 'show_about') {
+            await bot.sendMessage(query.message.chat.id, buildAbout(), {
+                parse_mode: 'Markdown',
+                reply_markup: aboutKeyboard
+            });
+            await bot.answerCallbackQuery(query.id);
         }
     });
 }
@@ -166,19 +243,15 @@ async function fireDailyReminder() {
     const t = getTimeRemaining();
     if (!t) return;
 
-    const messages = [
-        `☀️ *Good Morning!*\n\nRE-NEET 2026 mein sirf *${t.days} din* bache hain.\n\n_Uth ja. Padh le. Second chance waste mat kar._ 🩺`,
-        `🌅 *Subah ho gayi!*\n\nBas *${t.days} din* aur.\n\n_Aaj ka din count karna hai ya waste? Tera choice._ 📚`,
-        `⏰ *5 AM Reminder*\n\n*${t.days} days* left for RE-NEET 2026.\n\n_Jo log 5 baje uthke padhte hain, wahi AIIMS jaate hain._ 🔥`,
-        `🌄 *Rise & Grind!*\n\n*${t.days} din* bache hain RE-NEET tak.\n\n_Kal se nahi, ABHI se. Kitaab khol._ 💪`,
-        `☕ *Chai pee aur NCERT utha.*\n\nRE-NEET mein *${t.days} din* bache.\n\n_Second chance milti hai sabko, use karte hain sirf winners._ 🏆`,
-    ];
-
-    const msg = messages[Math.floor(Math.random() * messages.length)];
+    const quote = getDailyQuote();
+    const msg = `🌅 *Good Morning Aspirant!*\n\nRE-NEET 2026 mein sirf *${t.days} din* bache hain.\n\n💡 _${quote}_\n\n_Made with ♡ by Shush_`;
 
     for (const userId of users) {
         try {
-            await bot.sendMessage(userId, msg, { parse_mode: 'Markdown' });
+            await bot.sendMessage(userId, msg, { 
+                parse_mode: 'Markdown',
+                reply_markup: mainKeyboard
+            });
             await new Promise(r => setTimeout(r, 60)); // Rate limit
         } catch (e) {
             removeUser(userId);
